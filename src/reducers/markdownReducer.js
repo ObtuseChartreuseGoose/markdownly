@@ -3,17 +3,16 @@ import { UPDATE_MARKDOWN } from '../actions/markdownActions';
 const initialState = {
   'Default': {
     title: 'TITLE',
-    markdown: 'Hi'
+    markdown: ''
   }
 };
 
 export default (state = initialState, action) => {
   switch(action.type) {
     case UPDATE_MARKDOWN: {
-      // filter through array to match id
-      
-      return action.payload;
-
+      const id = action.payload.currentMarkdownId;
+      const markdown = action.payload.markdown;
+      return { ...state, [id]: { ...state[id], markdown } };
     }
     default:
       return state;

@@ -18,19 +18,28 @@ describe('markdownReducer', () => {
   });
 
   it('returns new state', () => {
-    const state = [{
-      id: '12345',
-      title: 'this title',
-      markdown: 'blah'
-    }];
+    const state = {
+      id: {
+        title: 'this title',
+        markdown: 'blah'
+      }
+    };
 
     const action = {
       type: 'UPDATE_MARKDOWN',
-      payload: 'blah'
+      payload: {
+        currentMarkdownId: 'id',
+        markdown: 'new text'
+      }
     };
 
     const newState = reducer(state, action);
 
-    expect(newState).toEqual('blah');
+    expect(newState).toEqual({
+      id: {
+        title: 'this title',
+        markdown: 'new text'
+      }
+    });
   });
 });
