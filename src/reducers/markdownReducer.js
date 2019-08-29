@@ -1,11 +1,5 @@
 import { UPDATE_MARKDOWN } from '../actions/markdownActions';
 
-// const initialState = [{
-//   id: '',
-//   title:  '',
-//   markdown: ''
-// }];
-
 const initialState = {
   'Default': {
     title: 'TITLE',
