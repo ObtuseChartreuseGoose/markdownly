@@ -2,12 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Tab from './Tab';
 
-function Tabs({ markdownFiles }) {
-  const markdownFilesItems = markdownFiles.map(file => (
-    <li key={file.id}>
-      <Tab title={file.title} id={file.id}/>
-    </li>
-  ));
+function Tabs({ markdownFiles, handleClick }) {
+  const idArray = Object.keys(markdownFiles);
+
+  const markdownFilesItems = idArray.map(id => {
+    const file = markdownFiles[id];
+
+    return (
+      <li key={id}>
+        <Tab title={file.title} id={id} handleClick={handleClick}/>
+      </li>
+    );
+  });
 
   return (
     <ul>
@@ -17,11 +23,11 @@ function Tabs({ markdownFiles }) {
 }
 
 Tabs.propTypes = {
-  markdownFiles: PropTypes.arrayOf(PropTypes.shape({
+  markdownFiles: PropTypes.shape({
     title: PropTypes.string.isRequired,
-    id: PropTypes.string.isRequired,
-    text: PropTypes.string.isRequired,
-  }))
+    markdown: PropTypes.string.isRequired,
+  }),
+  handleClick: PropTypes.func.isRequired
 };
 
 export default Tabs;

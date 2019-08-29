@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Tab({ title, id }) {
+function Tab({ title, id, handleClick }) {
   return (
     <section>
-      <button>{title}</button>
-      <button>X{id}</button>
+      <button name="loadTab" onClick={handleClick}>{title}</button>
+      <button name="deleteTab" onClick={event => handleClick(event, id)}>X</button>
     </section>
   );
 }
@@ -13,6 +13,7 @@ function Tab({ title, id }) {
 Tab.propTypes = {
   title: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
+  handleClick: PropTypes.func.isRequired,
 };
 
 export default Tab;
