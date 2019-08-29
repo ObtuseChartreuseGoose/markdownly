@@ -2,11 +2,14 @@ import { UPDATE_MARKDOWN, updateMarkdown } from './markdownActions';
 
 describe('markdownActions', () => {
   it('creates an UPDATE_MARKDOWN action', () => {
-    const action = updateMarkdown('my title');
+    const action = updateMarkdown('hi', 'Default');
 
     expect(action).toEqual({
       type: UPDATE_MARKDOWN,
-      payload: 'my title'
+      payload: {
+        markdown: 'hi',
+        currentMarkdownId: 'Default'
+      }
     });
   });
 });
