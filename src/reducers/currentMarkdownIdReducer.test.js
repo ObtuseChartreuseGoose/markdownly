@@ -17,10 +17,8 @@ describe('currentMarkdownIdReducer', () => {
   it('returns the updated state when it calls the update action', () => {
     const state = '12345';
     const action = updateCurrentMarkdownId('hi');
-    console.log('action', action);
 
     const newState = reducer(state, action);
-    console.log(newState);
 
     expect(newState).toEqual('hi');
   });
