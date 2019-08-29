@@ -23,10 +23,7 @@ function Tabs({ markdownFiles, handleClick }) {
 }
 
 Tabs.propTypes = {
-  markdownFiles: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    markdown: PropTypes.string.isRequired,
-  }),
+  markdownFiles: PropTypes.object.isRequired,
   handleClick: PropTypes.func.isRequired
 };
 
