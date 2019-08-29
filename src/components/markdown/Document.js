@@ -13,7 +13,6 @@ function Document({ markdown, addMarkdown, currentMarkdownId }) {
       </div>
     </>
   );
-
 }
 
 Document.propTypes = {

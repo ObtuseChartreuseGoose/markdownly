@@ -7,8 +7,3 @@ export const updateMarkdown = (markdown, currentMarkdownId) => ({
     currentMarkdownId
   },
 });
-
-
-
-
-

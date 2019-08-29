@@ -3,19 +3,13 @@ import Tabs from '../../components/tab/Tabs';
 import { updateCurrentMarkdownId } from '../../actions/currentMarkdownIdActions';
 import { getMarkdownFiles } from '../../selectors/markdownSelectors';
 
-// todo: make deleteTab
 const handleClickActionMap = {
   loadTab: updateCurrentMarkdownId
-  // deleteTab: updateSubtitle
 };
-
 
 const mapStateToProps = state => ({
   markdownFiles: getMarkdownFiles(state)
 });
-
-
-// todo: make mapDispatchToProps
 
 const mapDispatchToProps = dispatch => ({
   handleClick({ target }, id) {
