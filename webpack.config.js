@@ -44,10 +44,7 @@ module.exports = {
             loader: 'postcss-loader',
             options: {
               sourceMap: true,
-              plugins: [
-                require('autoprefixer')(),
-                require('postcss-nested')()
-              ]
+              plugins: [require('autoprefixer')(), require('postcss-nested')()]
             }
           }
         ]
@@ -56,8 +53,8 @@ module.exports = {
         test: /\.(jpeg|jpg|png|svg)$/,
         use: {
           loader: 'url-loader',
-          options: { limit: 1000 },
-        },
+          options: { limit: 1000 }
+        }
       }
     ]
   }

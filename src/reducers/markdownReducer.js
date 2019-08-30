@@ -1,4 +1,4 @@
-import { UPDATE_MARKDOWN, ADD_MARKDOWN_FILE } from '../actions/markdownActions';
+import { UPDATE_MARKDOWN, ADD_MARKDOWN_FILE, DELETE_MARKDOWN_FILE } from '../actions/markdownActions';
 
 const initialState = {
   'Default': {
@@ -18,6 +18,12 @@ export default (state = initialState, action) => {
       const newId = action.payload;
       const title = 'New Tab';
       return { ...state,  [newId]: { title: title, markdown: '' } };
+    }
+    case DELETE_MARKDOWN_FILE: {
+      const id = action.payload;
+      const newState = { ...state };
+      delete newState[id];
+      return newState;
     }
     default:
       return state;

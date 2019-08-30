@@ -12,3 +12,9 @@ export const addMarkdownFile = () => ({
   type: ADD_MARKDOWN_FILE,
   payload: '_' + Math.random().toString(36).substr(2, 9)
 });
+
+export const DELETE_MARKDOWN_FILE = 'DELETE_MARKDOWN_FILE';
+export const deleteMarkdownFile = (id) => ({
+  type: DELETE_MARKDOWN_FILE,
+  payload: id
+});
