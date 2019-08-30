@@ -5,7 +5,7 @@ function Tab({ title, id, handleClick }) {
   return (
     <section>
       <button name="loadTab" onClick={event => handleClick(event, id)}>{title}</button>
-      <button name="deleteTab" onClick={event => handleClick(event, id)}>X</button>
+      {id === 'Default' ? null :  <button name="deleteTab" onClick={event => handleClick(event, id)}>X</button>}
     </section>
   );
 }
